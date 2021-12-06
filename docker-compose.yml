@@ -1,8 +1,8 @@
 version: "3.4"
 services:
-  test_mysql:
+  mysqlHost:
     image: mysql:8
-    container_name: test_mysql
+    container_name: mysqlHost
     stdin_open: true
     ports:
       - 3306:3306
@@ -14,9 +14,9 @@ services:
       MYSQL_USER: $MYSQL_USERNAME
       MYSQL_PASSWORD: $MYSQL_PASSWORD
       MYSQL_DATABASE: $MYSQL_DATABASE
-  test_mongo:
+  mongoHost:
     image: mongo:4
-    container_name: test_mongo
+    container_name: mongoHost
     stdin_open: true
     ports:
       - 27017:27017
@@ -26,9 +26,9 @@ services:
       MONGO_INITDB_ROOT_USERNAME: $MONGO_ROOT_USERNAME
       MONGO_INITDB_ROOT_PASSWORD: $MONGO_ROOT_PASSWORD
       MONGO_INITDB_DATABASE: $MONGO_DATABASE
-  test_redis:
+  redisHost:
     image: redis:6
-    container_name: test_redis
+    container_name: redisHost
     stdin_open: true
     ports:
       - 6379:6379
