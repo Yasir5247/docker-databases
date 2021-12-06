@@ -32,6 +32,8 @@ services:
     stdin_open: true
     ports:
       - 6379:6379
+    # command: ['--requirepass "password"']
+    command: redis-server --requirepass password
     volumes:
       - test-redisdata:/var/lib/redis
 volumes:
